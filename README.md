@@ -80,7 +80,7 @@ We're planning to release a blog post and tutorial videos for the Stream Slack c
 
 ## Credits
 
-This project has been forked from [SlackAndroidClone](https://github.com/Anmol92verma/SlackAndroidClone) and the orignial credit goes to [Anmol92verma](https://github.com/Anmol92verma).
+This project has been forked from [SlackAndroidClone](https://github.com/Anmol92verma/SlackAndroidClone) and the original credit goes to [Anmol92verma](https://github.com/Anmol92verma).
 
  <a href="https://getstream.io/chat/sdk/compose?utm_source=Github&utm_medium=Github_Repo_Content_Ad&utm_content=Developer&utm_campaign=Github_May2022_SlackAndroidClone&utm_term=DevRelOss">
 <img src="https://user-images.githubusercontent.com/24237865/138428440-b92e5fb7-89f8-41aa-96b1-71a5486c5849.png" align="right" width="12%"/></a>
