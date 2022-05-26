@@ -49,6 +49,7 @@ If you’re interested in adding powerful In-App Messaging to your app, check ou
   - Lifecycle: Observe lifecycle changes.
   - ViewModel: UI related data holder and lifecycle aware.
   - Room Persistence: Constructs Database by providing an abstraction layer over SQLite to allow fluent database access.
+  - Paging3: Loads and displays pages of data from a larger dataset from local storage or over network.
   - App Startup: Provides a straightforward, performant way to initialize components at application startup.
 - [Hilt](https://dagger.dev/hilt/): Dependency Injection.
 - [Landscapist-Glide](https://github.com/skydoves/landscapist#glide): Jetpack Compose image loading library that fetches and displays network images with Glide, Coil, and Fresco.
