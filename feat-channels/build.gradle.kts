@@ -4,7 +4,6 @@ plugins {
   id(BuildPlugins.KOTLIN_KAPT)
   id(BuildPlugins.DAGGER_HILT)
   id(BuildPlugins.KOTLIN_PARCELABLE_PLUGIN)
-  id("org.jlleitschuh.gradle.ktlint")
 }
 
 android {
@@ -64,12 +63,11 @@ dependencies {
   implementation(project(":feat-chatcore"))
 
   api(Lib.Android.COMPOSE_UI)
-  api(Lib.Android.COIL_COMPOSE)
+  api(Lib.Android.LANDSCAPIST_GLIDE)
   api(Lib.Android.COMPOSE_MATERIAL)
   implementation(Lib.Android.ACCOMPANIST_SYSTEM_UI_CONTROLLER)
   api(Lib.Android.COMPOSE_UI)
   api(Lib.Android.COMPOSE_TOOLING)
-  implementation(Lib.Android.COIL_COMPOSE)
   debugApi(Lib.Android.COMPOSE_DEBUG_TOOLING)
   api(Lib.Android.ACTIVITY_COMPOSE)
   api(Lib.Android.CONSTRAINT_LAYOUT_COMPOSE)

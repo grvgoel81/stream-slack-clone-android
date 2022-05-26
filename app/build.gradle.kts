@@ -6,10 +6,7 @@ plugins {
   id(BuildPlugins.KOTLIN_PARCELABLE_PLUGIN)
   id(BuildPlugins.KOTLIN_KAPT)
   id(BuildPlugins.DAGGER_HILT)
-  id("org.jlleitschuh.gradle.ktlint")
 }
-
-// def preDexEnabled = "true" == System.getProperty("pre-dex", "true")
 
 android {
   compileSdk = (ProjectProperties.COMPILE_SDK)
@@ -24,28 +21,16 @@ android {
     vectorDrawables.useSupportLibrary = true
   }
 
-  signingConfigs {
-
-    getByName("debug") {
-      keyAlias = "praxis-debug"
-      keyPassword = "utherNiC"
-      storeFile = file("keystore/praxis-debug.jks")
-      storePassword = "uRgeSCIt"
-    }
-
-    create("release") {
-      keyAlias = "praxis-release"
-      keyPassword = "ITHOmptI"
-      storeFile = file("keystore/praxis-release.jks")
-      storePassword = "PoTHatHR"
-    }
-
-  }
   buildTypes {
-    getByName("release") {
+    val debug by getting {
+      isDebuggable = true
+      versionNameSuffix = "-debug"
+      applicationIdSuffix = ".debug"
+    }
+
+    val release by getting {
       isDebuggable = false
       versionNameSuffix = "-release"
-
       isMinifyEnabled = true
       isShrinkResources = true
 
@@ -53,18 +38,14 @@ android {
         getDefaultProguardFile("proguard-android.txt"), "proguard-common.txt",
         "proguard-specific.txt"
       )
-      signingConfig = signingConfigs.getByName("release")
     }
-    getByName("debug") {
-      isDebuggable = true
-      versionNameSuffix = "-debug"
-      applicationIdSuffix = ".debug"
-      signingConfig = signingConfigs.getByName("debug")
-    }
-  }
 
-  buildFeatures {
-    dataBinding = true
+    val benchmark by creating {
+      initWith(release)
+      signingConfig = signingConfigs.getByName("debug")
+      matchingFallbacks.add("release")
+      proguardFiles("benchmark-rules.pro")
+    }
   }
 
   buildFeatures {
@@ -74,6 +55,7 @@ android {
   composeOptions {
     kotlinCompilerExtensionVersion = Lib.Android.COMPOSE_COMPILER_VERSION
   }
+
   packagingOptions {
     resources.excludes.add("META-INF/LICENSE.txt")
     resources.excludes.add("META-INF/NOTICE.txt")
@@ -140,7 +122,6 @@ dependencies {
   kapt(Lib.Room.roomCompiler)
   implementation(Lib.Room.roomKtx)
   implementation(Lib.Room.roomPaging)
-
 
   /*Testing*/
   testImplementation(TestLib.JUNIT)

@@ -1,95 +1,105 @@
-# Slack Android Clone with Compose
+![Stream Slack Clone Android-1200x630px](https://user-images.githubusercontent.com/24237865/170381079-8670ed97-4246-4b67-9b7f-fec302b2fe2b.png)
 
-### Status: On Hold ✋ Might not commit on daily basis🏼👽
+<p align="center">
+  <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/></a>
+  <a href="https://android-arsenal.com/api?level=21"><img alt="API" src="https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat"/></a>
+</p>
 
-This is a jetpack compose sample app written in Kotlin following clean architecture principles.
+This is a slack clone app built with Jetpack Compose and [Stream Chat SDK for Compose](https://getstream.io/chat/sdk/compose?utm_source=Github&utm_medium=Github_Repo_Content_Ad&utm_content=Developer&utm_campaign=Github_May2022_SlackAndroidClone&utm_term=DevRelOss) following clean architecture principles.
 
-The purpose of this app to showcase:
+The purpose of this repository is to demonstrate below:
 
-- Implementation of Jetpack Android Architecture components with Dagger Android and Data Binding to
-  minimize boilerplate code
-- Creation of proper components and Subcomponents using Dagger Android and their injection into
-  Activity, Compose Views, View Models and Helper Classes
-- Performing background task with Kotlin Coroutines
+- Implementing entire UI elements with Jetpack Compose.
+- Implementation of Android architecture components with Jetpack libraries such as Hilt.
+- Performing background tasks with Kotlin Coroutines.
+- Integrating chat systems with Stream Chat SDK for real-time event handling and authentication.
 
-## Screenshots
+## Download
+Go to the [Releases](https://github.com/GetStream/stream-slack-android-clone/releases) to download the latest APK.
 
-| Screenshots            | In Progress                        |
-|----------------	|------------------------------	|
-| <img src="art/art1.png" alt="drawing" style="width:300px;"/> | <img src="art/art2.png" alt="drawing" style="width:300px;"/> |
-| <img src="art/art3.png" alt="drawing" style="width:300px;"/> | <img src="art/art4.png" alt="drawing" style="width:300px;"/> |
-| <img src="art/art5.png" alt="drawing" style="width:300px;"/> | <img src="art/art6.png" alt="drawing" style="width:300px;"/> |
-| <img src="art/art10.png" alt="drawing" style="width:300px;"/> | <img src="art/art11.png" alt="drawing" style="width:300px;"/> |
-| <img src="art/animated_start.gif" alt="drawing" style="width:300px;"/> | <img src="art/gesture_vertical_drag_chatbox.gif" style="width:300px;"/> |
-| <img src="art/art8.gif" alt="drawing" style="width:300px;"/> | <img src="art/art9.png" alt="drawing" style="width:300px;"/> |
+<a href="https://getstream.io/chat/sdk/android/?utm_source=Github&utm_medium=Github_Repo_Content_Ad&utm_content=Developer&utm_campaign=Github_Mar2022_AndroidSDK&utm_term=DevRelOss">
+<img src="https://user-images.githubusercontent.com/24237865/138428440-b92e5fb7-89f8-41aa-96b1-71a5486c5849.png" align="right" width="12%"/>
+</a>
 
-### TODOs and questions to self
+## 🛥 Stream Chat SDK
+Stream Slack Android clone was built with __[Stream Chat SDK for Compose](https://getstream.io/chat/sdk/compose?utm_source=Github&utm_medium=Github_Repo_Content_Ad&utm_content=Developer&utm_campaign=Github_May2022_SlackAndroidClone&utm_term=DevRelOss)__ to implement messaging systems.
+If you’re interested in adding powerful In-App Messaging to your app, check out the __[Android Chat Messaging Tutorial](https://getstream.io/chat/compose/tutorial??utm_source=Github&utm_medium=Github_Repo_Content_Ad&utm_content=Developer&utm_campaign=Github_May2022_SlackAndroidClone&utm_term=DevRelOss)__!
 
-- Rewrite the Colors and light/dark mode compatibility!
-- Should we have separate theme for each UI module ?
-- How to handle dynamic theme colors ?
+## 📷 Previews
 
-## 🏗️️ Built with ❤️ using Jetpack Compose 😁
+<p align="center">
+<img src="art/preview.gif" alt="drawing" width="270" />
+<img src="art/art1.png" alt="drawing" width="270" />
+<img src="art/art2.png" alt="drawing" width="270" />
+<img src="art/art3.png" alt="drawing" width="270" />
+<img src="art/art4.png" alt="drawing" width="270" />
+<img src="art/art5.png" alt="drawing" width="270" />
+<img src="art/art6.png" alt="drawing" width="270" />
+<img src="art/art7.png" alt="drawing" width="270" />
+<img src="art/art8.png" alt="drawing" width="270" />
+</p>
 
-| What            | How                        |
-|----------------	|------------------------------	|
-| 🎭 User Interface (Android)   | [Jetpack Compose](https://developer.android.com/jetpack/compose)                |
-| 🏗 Architecture    | [Clean](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)                            |
-| 💉 DI (Android)                | [Hilt](https://developer.android.com/training/dependency-injection/hilt-android)                        |
-| 🌊 Async            | [Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) + [Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/)                |
-| 🌐 Networking        | [Retrofit](https://square.github.io/retrofit/)                        |
-| 📄 Parsing            | [KotlinX](https://kotlinlang.org/docs/serialization.html)                            |
+## 🛠 Tech Sacks & Open Source Libraries
+- Minimum SDK level 21.
+- 100% [Jetpack Compose](https://developer.android.com/jetpack/compose) based + [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) + [Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/) for asynchronous.
+- [Compose Chat SDK for Messaging](https://getstream.io/chat/compose/tutorial/?utm_source=Github&utm_medium=Github_Repo_Content_Ad&utm_content=Developer&utm_campaign=Github_Mar2022_AndroidSDK&utm_term=DevRelOss): The Jetpack Compose Chat Messaging SDK is built on a low-level chat client and provides modular, customizable Compose UI components that you can easily drop into your app.
+- Jetpack
+  - Compose: Android’s modern toolkit for building native UI.
+  - Lifecycle: Observe lifecycle changes.
+  - ViewModel: UI related data holder and lifecycle aware.
+  - Room Persistence: Constructs Database by providing an abstraction layer over SQLite to allow fluent database access.
+  - App Startup: Provides a straightforward, performant way to initialize components at application startup.
+- [Hilt](https://dagger.dev/hilt/): Dependency Injection.
+- [Landscapist-Glide](https://github.com/skydoves/landscapist#glide): Jetpack Compose image loading library that fetches and displays network images with Glide, Coil, and Fresco.
+- [Retrofit2 & OkHttp3](https://github.com/square/retrofit): Construct the REST APIs and paging network data.
+- [Timber](https://github.com/JakeWharton/timber): A logger with a small, extensible API which provides utility.
 
-## Languages, libraries and tools used
-
-- [Kotlin](https://kotlinlang.org/)
-- AndroidX libraries
-- [Android Architecture Components](https://developer.android.com/topic/libraries/architecture)
-- [Android Data Binding](https://developer.android.com/topic/libraries/data-binding)
-- [Dagger 2](https://github.com/google/dagger)
-- [Retrofit](http://square.github.io/retrofit/)
-- [Kotlin Coroutines](https://developer.android.com/kotlin/coroutines)
-
-## Architecture
+## 🏛️ Architecture
 
 SlackClone follows the principles of Clean Architecture with Android Architecture Components.
 
 ### Architecture's layers & boundaries:
 
-<img src="art/architecture.jpeg" />
+<img src="art/architecture.png" />
 
-**UI Layer**  contains  _UI (Activities, Composables, Fragments)_  that are coordinated by  _
-ViewModels which execute 1 or multiple UseCases._  Presentation Layer depends on Domain Layer.
+- **User Interface Layer**: The responsibility of the UI layer is to render the application data on the screen. UI elements must be updated whenever the application data changes from user interaction or external communication with the network and database.
+- **Presentation Layer**: The responsibility of the Presentation layer is to interact and notify data changes between UI layers and Domain layers. It also holds and restores data in configuration changes.
+- **Domain Layer**: The domain layer is responsible for abstracting complex business logic and improving its reusability. This layer transforms the complex application data into suitable types for Presentation layers and groups similar business logic as a single feature.
+- **Data Layer**: The responsibility of the data layer is to deliver the result of business logic executions, such as CRUD operations (Create, Retrieve, Update, Delete – all system events). This layer can be designed with various strategies, like Repository or DataSource, for dividing the responsibility of executions.
 
-**Domain Layer** is the most INNER part of the circle (no dependencies with other layers) and it
-contains _Entities, Use cases & Repository Interfaces._ Use cases combine data from 1 or multiple
-Repository Interfaces.
+For more information, check out the [The 2022 Android Developer Roadmap: Part 3, Architecture Components](https://getstream.io/blog/android-developer-roadmap-part-3/#architecture-components).
 
-**Data Layer**  contains  _Repository Implementations and 1 or multiple Data Sources._  Repositories
-are responsible to coordinate data from the different Data Sources. Data Layer depends on Domain
-Layer.
+### ✍️ Blog Post and Tutorial Video
+We're planning to release a blog post and tutorial videos for the Stream Slack clone project. If you'd like to get notified as we release future posts, join the **[watchers](https://github.com/skydoves/android-developer-roadmap/watchers)** on GitHub or follow **[Stream](https://twitter.com/getstream_io)** on Twitter. You can also follow the __[author](https://github.com/skydoves)__ of this repository on GitHub.
 
-**Notes:** Mapping between response models and transformed models will happen via extension
-functions defined in transformed model file
+## 💯 MAD Score
 
-### When writing a new ui module
+![summary](https://user-images.githubusercontent.com/24237865/158918011-bc766482-ec83-47dd-9237-d8a226cab263.png)
 
-- First, Create a new android library module
-- Make sure to copy build.gradle.kts from other ui module and paste it in your ui-module
-- We need one fragment to host the composables, this fragment will be added to main nav graph.
-- the routing within compose world is handled with Compose Navigator
-- and to move out of one ui module you need to use the fragment navigator!
+## Credits
 
-### Conventions:
+This project has been forked from [SlackAndroidClone](https://github.com/Anmol92verma/SlackAndroidClone) and the orignial credit goes to [Anmol92verma](https://github.com/Anmol92verma).
 
-Files are suffixed with be defined Class types.
+ <a href="https://getstream.io/chat/sdk/android/?utm_source=Github&utm_medium=Github_Repo_Content_Ad&utm_content=Developer&utm_campaign=Github_Mar2022_AndroidSDK&utm_term=DevRelOss">
+<img src="https://user-images.githubusercontent.com/24237865/138428440-b92e5fb7-89f8-41aa-96b1-71a5486c5849.png" align="right" width="12%"/></a>
 
-- ViewModels are suffixed with **VM**. Ex: `LoginVM`
-- UseCases are suffixed with **UseCase**. Ex: `LoginUseCase`
-- Sources are suffixed with **Source**. Ex: `LoginRemoteSource`, `LoginLocalSource`
-- Repositories are suffixed with **Repo**. Ex: `LoginRepo`
+## Find this repository useful? 💙
+Support it by joining __[stargazers](https://github.com/GetStream/stream-slack-clone-android/stargazers)__ for this repository. :star: <br>
+Also, follow __[maintainers](https://github.com/GetStream/stream-slack-clone-android/graphs/contributors)__ on GitHub for our next creations! 🤩
 
-## Conclusion
+# License
+```xml
+Copyright 2022 Stream.IO, Inc. All Rights Reserved.
 
-This project can be used as a template for new apps. This project is continually evolving to
-integrate other libraries and techniques to keep it up to date.
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```

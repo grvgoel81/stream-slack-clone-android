@@ -48,7 +48,7 @@ dependencies {
     api(Lib.Android.COMPOSE_UI)
     implementation(Lib.Android.CONSTRAINT_LAYOUT_COMPOSE)
     implementation(Lib.Android.ACCOMPANIST_SYSTEM_UI_CONTROLLER)
-    api(Lib.Android.COIL_COMPOSE)
+    api(Lib.Android.LANDSCAPIST_GLIDE)
     api(Lib.Android.COMPOSE_MATERIAL)
     api(Lib.Android.COMPOSE_TOOLING)
     debugApi(Lib.Android.COMPOSE_DEBUG_TOOLING)

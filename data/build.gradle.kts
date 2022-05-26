@@ -35,6 +35,10 @@ dependencies {
   }
   implementation(project(":common"))
   implementation(project(":domain"))
+
+  /*Stream Chat SDK*/
+  implementation(Lib.STREAM.STREAM_CHAT_CLIENT)
+
   /*Kotlin*/
   api(Lib.Kotlin.KT_STD)
   api(Lib.Async.COROUTINES)
