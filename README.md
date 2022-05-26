@@ -24,7 +24,7 @@ Go to the [Releases](https://github.com/GetStream/stream-slack-clone-android/rel
 
 ## 🛥 Stream Chat SDK
 Stream Slack Android clone was built with __[Stream Chat SDK for Compose](https://getstream.io/chat/sdk/compose?utm_source=Github&utm_medium=Github_Repo_Content_Ad&utm_content=Developer&utm_campaign=Github_May2022_SlackAndroidClone&utm_term=DevRelOss)__ to implement messaging systems.
-If you’re interested in adding powerful In-App Messaging to your app, check out the __[Android Chat Messaging Tutorial](https://getstream.io/chat/compose/tutorial??utm_source=Github&utm_medium=Github_Repo_Content_Ad&utm_content=Developer&utm_campaign=Github_May2022_SlackAndroidClone&utm_term=DevRelOss)__!
+If you’re interested in adding powerful In-App Messaging to your app, check out the __[Android Chat Messaging Tutorial](https://getstream.io/tutorials/android-chat?utm_source=Github&utm_medium=Github_Repo_Content_Ad&utm_content=Developer&utm_campaign=Github_May2022_SlackAndroidClone&utm_term=DevRelOss)__!
 
 ## 📷 Previews
 
@@ -71,7 +71,7 @@ Stream Slack Clone Android follows the principles of Clean Architecture with And
 For more information, check out the [The 2022 Android Developer Roadmap: Part 3, Architecture Components](https://getstream.io/blog/android-developer-roadmap-part-3/#architecture-components).
 
 ### ✍️ Blog Post and Tutorial Video
-We're planning to release a blog post and tutorial videos for the Stream Slack clone project. If you'd like to get notified as we release future posts, join the **[watchers](https://github.com/skydoves/android-developer-roadmap/watchers)** on GitHub or follow **[Stream](https://twitter.com/getstream_io)** on Twitter. You can also follow the __[author](https://github.com/skydoves)__ of this repository on GitHub.
+We're planning to release a blog post and tutorial videos for the Stream Slack clone project. If you'd like to get notified as we release future posts, join the **[watchers](https://github.com/GetStream/stream-slack-clone-android/watchers)** on GitHub or follow **[Stream](https://twitter.com/getstream_io)** on Twitter. You can also follow the __[author](https://github.com/skydoves)__ of this repository on GitHub.
 
 ## 💯 MAD Score
 
@@ -86,7 +86,7 @@ This project has been forked from [SlackAndroidClone](https://github.com/Anmol92
 
 ## Find this repository useful? 💙
 Support it by joining __[stargazers](https://github.com/GetStream/stream-slack-clone-android/stargazers)__ for this repository. :star: <br>
-Also, follow __[maintainers](https://github.com/GetStream/stream-slack-clone-android/graphs/contributors)__ on GitHub for our next creations! 🤩
+Also, follow __[maintainers](https://github.com/skydoves)__ on GitHub for our next creations! 🤩
 
 # License
 ```xml
