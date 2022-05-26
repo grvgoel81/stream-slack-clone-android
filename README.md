@@ -57,7 +57,7 @@ If you’re interested in adding powerful In-App Messaging to your app, check ou
 
 ## 🏛️ Architecture
 
-SlackClone follows the principles of Clean Architecture with Android Architecture Components.
+Stream Slack Clone Android follows the principles of Clean Architecture with Android Architecture Components.
 
 ### Architecture's layers & boundaries:
 
