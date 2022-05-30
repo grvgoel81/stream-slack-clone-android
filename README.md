@@ -1,4 +1,4 @@
-![Stream Slack Clone Android-1200x630px](https://user-images.githubusercontent.com/24237865/170381079-8670ed97-4246-4b67-9b7f-fec302b2fe2b.png)
+![cover](https://user-images.githubusercontent.com/24237865/171068407-e3a634ba-14c5-41dc-931d-660892897313.png)
 
 <p align="center">
   <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/></a>
