@@ -70,10 +70,6 @@ fun GettingStartedUI(composeNavigator: ComposeNavigator) {
       sysUiController.setSystemBarsColor(color = SlackCloneColor)
     }
 
-    var showSlackAnim by remember {
-      mutableStateOf(true)
-    }
-
     Scaffold(
       backgroundColor = SlackCloneColor,
       contentColor = SlackCloneColorProvider.colors.textSecondary,
@@ -88,25 +84,17 @@ fun GettingStartedUI(composeNavigator: ComposeNavigator) {
             .padding(28.dp)
         ) {
 
-          if (showSlackAnim) {
-            SlackAnimation {
-              showSlackAnim = false
-            }
-          } else {
-            AnimatedVisibility(visible = !showSlackAnim) {
-              Column(
-                verticalArrangement = Arrangement.SpaceAround,
-                horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier
-                  .fillMaxHeight()
-                  .fillMaxWidth()
-              ) {
-                IntroText(modifier = Modifier.padding(top = 12.dp))
-                CenterImage()
-                Spacer(Modifier.padding(8.dp))
-                GetStartedButton(composeNavigator)
-              }
-            }
+          Column(
+            verticalArrangement = Arrangement.SpaceAround,
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+              .fillMaxHeight()
+              .fillMaxWidth()
+          ) {
+            IntroText(modifier = Modifier.padding(top = 12.dp))
+            CenterImage()
+            Spacer(Modifier.padding(8.dp))
+            GetStartedButton(composeNavigator)
           }
         }
       }
