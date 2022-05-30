@@ -29,6 +29,7 @@ If you’re interested in adding powerful In-App Messaging to your app, check ou
 ## 📷 Previews
 
 <p align="center">
+<img src="art/art0.gif" alt="drawing" width="270" />
 <img src="art/art1.png" alt="drawing" width="270" />
 <img src="art/art2.png" alt="drawing" width="270" />
 <img src="art/art3.png" alt="drawing" width="270" />
