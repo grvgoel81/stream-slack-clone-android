@@ -6,7 +6,7 @@
   <a href="https://github.com/GetStream/stream-slack-clone-android/actions/workflows/android.yml"><img alt="Build Status" src="https://github.com/GetStream/stream-slack-clone-android/actions/workflows/android.yml/badge.svg"/></a>
 </p>
 
-This is a slack clone app built with Jetpack Compose and [Stream Chat SDK for Compose](https://getstream.io/chat/sdk/compose?utm_source=Github&utm_medium=Github_Repo_Content_Ad&utm_content=Developer&utm_campaign=Github_May2022_SlackAndroidClone&utm_term=DevRelOss) following clean architecture principles.
+This is a [Slack](https://slack.com/) clone app built with Jetpack Compose and [Stream Chat SDK for Compose](https://getstream.io/chat/sdk/compose?utm_source=Github&utm_medium=Github_Repo_Content_Ad&utm_content=Developer&utm_campaign=Github_May2022_SlackAndroidClone&utm_term=DevRelOss) following clean architecture principles.
 
 The purpose of this repository is to demonstrate below:
 
