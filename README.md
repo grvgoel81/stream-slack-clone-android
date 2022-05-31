@@ -78,7 +78,7 @@ We're planning to release a blog post and tutorial videos for the Stream Slack c
 
 ![summary](https://user-images.githubusercontent.com/24237865/158918011-bc766482-ec83-47dd-9237-d8a226cab263.png)
 
-## Credits
+## Copyrights & Credits
 
 All copyrights of the resources, logo, branding, content, concepts, and phrases that are used in this open-source project belong to [Slack](https://slack.com/). Also, 
 this project was forked from [SlackAndroidClone](https://github.com/Anmol92verma/SlackAndroidClone) and the original credit goes to [Anmol92verma](https://github.com/Anmol92verma).
