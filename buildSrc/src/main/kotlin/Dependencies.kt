@@ -3,9 +3,9 @@ import Lib.Networking
 /** This file contains versions of all the dependencies used in the module  */
 
 object BuildPlugins {
-  const val TOOLS_BUILD_GRADLE = "com.android.tools.build:gradle:7.1.3"
+  const val TOOLS_BUILD_GRADLE = "com.android.tools.build:gradle:7.2.0"
   const val DAGGER_HILT_PLUGIN = "com.google.dagger:hilt-android-gradle-plugin:2.40.5"
-  const val KOTLIN_GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10"
+  const val KOTLIN_GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21"
   const val ANDROID_APPLICATION_PLUGIN = "com.android.application"
   const val ANDROID_LIBRARY_PLUGIN = "com.android.library"
   const val ANDROID_TEST_PLUGIN = "com.android.test"
@@ -18,15 +18,15 @@ object BuildPlugins {
 
 object Lib {
   object Kotlin {
-    const val KOTLIN_VERSION = "1.6.0"
+    const val KOTLIN_VERSION = "1.6.21"
     private const val KTX_CORE_VERSION = "1.2.0"
     const val KT_STD = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$KOTLIN_VERSION"
     const val KTX_CORE = "androidx.core:core-ktx:$KTX_CORE_VERSION"
   }
 
   object Android {
-    const val COMPOSE_VERSION = "1.1.1"
-    const val COMPOSE_COMPILER_VERSION = "1.1.1"
+    const val COMPOSE_VERSION = "1.2.0-rc01"
+    const val COMPOSE_COMPILER_VERSION = "1.2.0-rc01"
     private const val MATERIAL_DESIGN_VERSION = "1.4.0"
     private const val COMPOSE_ACTIVITY_VERSION = "1.4.0"
     private const val COMPOSE_CONSTRAINT_LAYOUT_VERSION = "1.0.0"
@@ -78,7 +78,7 @@ object Lib {
   }
 
   object Room {
-    private const val roomVersion = "2.4.1"
+    private const val roomVersion = "2.4.2"
     const val roomRuntime = "androidx.room:room-runtime:$roomVersion"
     const val roomCompiler = "androidx.room:room-compiler:$roomVersion"
 
@@ -106,7 +106,7 @@ object Lib {
   }
 
   object STREAM {
-    private const val STREAM_CHAT_VERSION = "5.2.0"
+    private const val STREAM_CHAT_VERSION = "5.3.1"
     const val STREAM_CHAT_CLIENT = "io.getstream:stream-chat-android-client:$STREAM_CHAT_VERSION"
     const val STREAM_CHAT_COMPOSE =
       "io.getstream:stream-chat-android-compose:$STREAM_CHAT_VERSION"
