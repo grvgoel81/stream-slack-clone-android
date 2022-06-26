@@ -71,8 +71,10 @@ Stream Slack Clone Android follows the principles of Clean Architecture with And
 
 For more information, check out the [The 2022 Android Developer Roadmap: Part 3, Architecture Components](https://getstream.io/blog/android-developer-roadmap-part-3/#architecture-components).
 
-### ✍️ Blog Post and Tutorial Video
-We're planning to release a blog post and tutorial videos for the Stream Slack clone project. If you'd like to get notified as we release future posts, join the **[watchers](https://github.com/GetStream/stream-slack-clone-android/watchers)** on GitHub or follow **[Stream](https://twitter.com/getstream_io)** on Twitter. You can also follow the __[author](https://github.com/skydoves)__ of this repository on GitHub.
+### ✍️ Blog Post
+
+Check out [Bringing Anmol Verma’s Jetpack Compose Slack Project to Life](https://getstream.io/blog/slack-clone-jetpack-compose/) for learning the details of how to integrate chat features into the Slack clone project.
+
 
 ## 💯 MAD Score
 
