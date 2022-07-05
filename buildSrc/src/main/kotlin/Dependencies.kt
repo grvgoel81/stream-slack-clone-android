@@ -31,7 +31,7 @@ object Lib {
     private const val COMPOSE_ACTIVITY_VERSION = "1.4.0"
     private const val COMPOSE_CONSTRAINT_LAYOUT_VERSION = "1.0.0"
     private const val COMPOSE_NAVIGATION_VERSION = "2.5.0-alpha01"
-    private const val LANDSCAPIST_GLIDE_VERSION = "1.5.2"
+    private const val LANDSCAPIST_GLIDE_VERSION = "1.5.3"
     private const val ACCOMPANIST_VERSION = "0.24.1-alpha"
     private const val SPLASH_SCREEN_VERSION = "1.0.0-beta01"
 
@@ -106,7 +106,7 @@ object Lib {
   }
 
   object STREAM {
-    private const val STREAM_CHAT_VERSION = "5.3.1"
+    private const val STREAM_CHAT_VERSION = "5.5.0"
     const val STREAM_CHAT_CLIENT = "io.getstream:stream-chat-android-client:$STREAM_CHAT_VERSION"
     const val STREAM_CHAT_COMPOSE =
       "io.getstream:stream-chat-android-compose:$STREAM_CHAT_VERSION"
