@@ -15,7 +15,15 @@ The purpose of this repository is to demonstrate below:
 - Performing background tasks with Kotlin Coroutines.
 - Integrating chat systems with Stream Chat SDK for real-time event handling and authentication.
 
-## Download
+## :bulb: Additional Repositories
+
+If you're interested in additional repositories that were built with Jetpack Compose and Stream SDK, check out the repositories below:
+
+- [WhatsApp Clone Compose](https://github.com/getStream/whatsApp-clone-compose): 📱 WhatsApp clone project demonstrates modern Android development built with Jetpack Compose and Stream Chat SDK for Compose.
+- [Stream Draw Android](https://github.com/getStream/stream-draw-android): 🛥 Stream Draw is a real-time multiplayer drawing & chat game app built entirely with Jetpack Compose.
+- [Facebook Messenger Clone](https://github.com/MathRoda/Messenger-clone): Facebook Messenger clone using Stream SDK & Jetpack Compose.
+
+## 📲 Download
 Go to the [Releases](https://github.com/GetStream/stream-slack-clone-android/releases) to download the latest APK.
 
 <a href="https://getstream.io/chat/sdk/compose?utm_source=Github&utm_medium=Github_Repo_Content_Ad&utm_content=Developer&utm_campaign=Github_May2022_SlackAndroidClone&utm_term=DevRelOss">
