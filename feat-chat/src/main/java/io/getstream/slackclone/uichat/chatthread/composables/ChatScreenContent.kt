@@ -6,6 +6,7 @@ import androidx.compose.animation.core.spring
 import androidx.compose.foundation.gestures.detectVerticalDragGestures
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -23,10 +24,9 @@ import androidx.constraintlayout.compose.Dimension
 import androidx.constraintlayout.compose.ExperimentalMotionApi
 import androidx.constraintlayout.compose.MotionLayout
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.google.accompanist.insets.navigationBarsWithImePadding
-import io.getstream.chat.android.client.models.Channel
 import io.getstream.chat.android.compose.viewmodel.messages.MessageListViewModel
 import io.getstream.chat.android.compose.viewmodel.messages.MessagesViewModelFactory
+import io.getstream.chat.android.models.Channel
 import io.getstream.slackclone.uichat.chatthread.BoxState
 import io.getstream.slackclone.uichat.chatthread.ChatScreenVM
 
@@ -69,13 +69,14 @@ fun ChatScreenContent(
       end = chatConstrainsExpanded(),
       progress = change,
       modifier = Modifier
-        .navigationBarsWithImePadding()
+        .imePadding()
         .fillMaxHeight()
         .fillMaxWidth()
     ) {
       ChatMessagesUI(
         modifier = Modifier.layoutId("chatView"),
         currentState = currentState,
+        selectedState = currentState.selectedMessageState,
         listViewModel = it
       )
       ChatMessageBox(

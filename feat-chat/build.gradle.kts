@@ -1,17 +1,18 @@
 plugins {
   id(BuildPlugins.ANDROID_LIBRARY_PLUGIN)
   id(BuildPlugins.KOTLIN_ANDROID_PLUGIN)
-  id(BuildPlugins.KOTLIN_KAPT)
+  id(BuildPlugins.KOTLIN_KSP)
   id(BuildPlugins.DAGGER_HILT)
+  id(BuildPlugins.COMPOSE_COMPILER)
   id(BuildPlugins.KOTLIN_PARCELABLE_PLUGIN)
 }
 
 android {
   compileSdk = ProjectProperties.COMPILE_SDK
+  namespace = "io.getstream.slackclone.uichat"
 
   defaultConfig {
     minSdk = (ProjectProperties.MIN_SDK)
-    targetSdk = (ProjectProperties.TARGET_SDK)
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
 
@@ -26,10 +27,7 @@ android {
     compose = true
   }
 
-  composeOptions {
-    kotlinCompilerExtensionVersion = Lib.Android.COMPOSE_COMPILER_VERSION
-  }
-  packagingOptions {
+  packaging {
     resources.excludes.add("META-INF/LICENSE.txt")
     resources.excludes.add("META-INF/NOTICE.txt")
     resources.excludes.add("LICENSE.txt")
@@ -45,12 +43,6 @@ android {
     jvmTarget = "1.8"
   }
 
-}
-
-// Required for annotation processing plugins like Dagger
-kapt {
-  generateStubs = true
-  correctErrorTypes = true
 }
 
 dependencies {
@@ -78,15 +70,12 @@ dependencies {
   api(Lib.Android.APP_COMPAT)
   api(Lib.Kotlin.KTX_CORE)
 
-  api(Lib.Android.ACCOMPANIST_INSETS)
-
   /*DI*/
   api(Lib.Di.hiltAndroid)
   api(Lib.Di.hiltNavigationCompose)
-  api(Lib.Di.hiltViewModel)
 
-  kapt(Lib.Di.hiltCompiler)
-  kapt(Lib.Di.hiltAndroidCompiler)
+  ksp(Lib.Di.hiltCompiler)
+  ksp(Lib.Di.hiltAndroidCompiler)
 
   /* Logger */
   api(Lib.Logger.TIMBER)

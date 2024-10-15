@@ -81,16 +81,19 @@ fun HomeScreenUI(
 
 @Composable
 fun ThreadsTile() {
-  SlackListItem(Icons.Default.MailOutline, stringResource(R.string.threads))
+  SlackListItem(
+    Icons.Default.MailOutline,
+    stringResource(io.getstream.slackclone.common.R.string.threads)
+  )
 }
 
 @Composable
 fun JumpToText() {
   Box(
-    Modifier
-      .fillMaxWidth()
-      .clickable { }
-      .padding(12.dp)
+      Modifier
+          .fillMaxWidth()
+          .clickable { }
+          .padding(12.dp)
   ) {
     RoundedCornerBoxDecoration {
       Text(
@@ -122,7 +125,7 @@ fun MMImageButton(appBarIconClick: () -> Unit) {
   }) {
     SlackImageBox(
       Modifier.size(38.dp),
-      R.drawable.logo_stream
+      io.getstream.slackclone.commonui.R.drawable.logo_stream
     )
   }
 }

@@ -14,7 +14,7 @@ fun EmailAddressInputUI(
   SlackCloneTheme {
     CommonInputUI(
       composeNavigator = composeNavigator,
-      TopView = { modifier -> EmailInputView(modifier, onBoardingVM) },
+      topView = { modifier -> EmailInputView(modifier, onBoardingVM) },
       subtitleText = stringResource(id = R.string.subtitle_this_email_slack),
       onBoardingVM = onBoardingVM
     )
@@ -29,7 +29,7 @@ fun WorkspaceInputUI(
   SlackCloneTheme {
     CommonInputUI(
       composeNavigator = composeNavigator,
-      TopView = { modifier -> WorkspaceInputView(modifier, onBoardingVM) },
+      topView = { modifier -> WorkspaceInputView(modifier, onBoardingVM) },
       subtitleText = stringResource(id = R.string.subtitle_this_address_slack),
       onBoardingVM = onBoardingVM
     )

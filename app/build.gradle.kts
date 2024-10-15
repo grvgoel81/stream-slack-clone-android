@@ -4,12 +4,14 @@ plugins {
   id(BuildPlugins.ANDROID_APPLICATION_PLUGIN)
   id(BuildPlugins.KOTLIN_ANDROID_PLUGIN)
   id(BuildPlugins.KOTLIN_PARCELABLE_PLUGIN)
-  id(BuildPlugins.KOTLIN_KAPT)
+  id(BuildPlugins.KOTLIN_KSP)
+  id(BuildPlugins.COMPOSE_COMPILER)
   id(BuildPlugins.DAGGER_HILT)
 }
 
 android {
   compileSdk = (ProjectProperties.COMPILE_SDK)
+  namespace = "io.getstream.slackclone"
 
   defaultConfig {
     applicationId = (ProjectProperties.APPLICATION_ID)
@@ -56,10 +58,6 @@ android {
     compose = true
   }
 
-  composeOptions {
-    kotlinCompilerExtensionVersion = Lib.Android.COMPOSE_COMPILER_VERSION
-  }
-
   packagingOptions {
     resources.excludes.add("META-INF/LICENSE.txt")
     resources.excludes.add("META-INF/NOTICE.txt")
@@ -75,12 +73,6 @@ android {
   kotlinOptions {
     jvmTarget = "1.8"
   }
-}
-
-// Required for annotation processing plugins like Dagger
-kapt {
-  generateStubs = true
-  correctErrorTypes = true
 }
 
 dependencies {
@@ -100,7 +92,6 @@ dependencies {
   implementation(Lib.Kotlin.KT_STD)
   implementation(Lib.Android.MATERIAL_DESIGN)
   implementation(Lib.Android.CONSTRAINT_LAYOUT_COMPOSE)
-  implementation(Lib.Android.ACCOMPANIST_INSETS)
   implementation(Lib.Android.SPLASH_SCREEN_API)
 
   implementation(Lib.Android.APP_COMPAT)
@@ -110,10 +101,9 @@ dependencies {
   /*DI*/
   implementation(Lib.Di.hiltAndroid)
   implementation(Lib.Di.hiltNavigationCompose)
-  implementation(Lib.Di.hiltViewModel)
 
-  kapt(Lib.Di.hiltCompiler)
-  kapt(Lib.Di.hiltAndroidCompiler)
+  ksp(Lib.Di.hiltCompiler)
+  ksp(Lib.Di.hiltAndroidCompiler)
 
   /* Logger */
   implementation(Lib.Logger.TIMBER)
@@ -123,7 +113,7 @@ dependencies {
 
   /* Room */
   implementation(Lib.Room.roomRuntime)
-  kapt(Lib.Room.roomCompiler)
+  ksp(Lib.Room.roomCompiler)
   implementation(Lib.Room.roomKtx)
   implementation(Lib.Room.roomPaging)
 

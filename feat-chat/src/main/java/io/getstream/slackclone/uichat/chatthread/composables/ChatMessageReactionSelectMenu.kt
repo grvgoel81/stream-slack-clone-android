@@ -1,7 +1,6 @@
 package io.getstream.slackclone.uichat.chatthread.composables
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.AnimationConstants
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
@@ -22,26 +21,24 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import io.getstream.chat.android.client.ChatClient
-import io.getstream.chat.android.client.models.Message
-import io.getstream.chat.android.client.models.Reaction
-import io.getstream.chat.android.common.state.React
 import io.getstream.chat.android.compose.state.messageoptions.MessageOptionItemState
-import io.getstream.chat.android.compose.state.messages.MessagesState
-import io.getstream.chat.android.compose.state.messages.SelectedMessageOptionsState
-import io.getstream.chat.android.compose.state.messages.SelectedMessageReactionsState
 import io.getstream.chat.android.compose.ui.components.messageoptions.defaultMessageOptionsState
 import io.getstream.chat.android.compose.ui.components.selectedmessage.SelectedMessageMenu
 import io.getstream.chat.android.compose.ui.components.selectedmessage.SelectedReactionsMenu
 import io.getstream.chat.android.compose.viewmodel.messages.MessageListViewModel
+import io.getstream.chat.android.models.Message
+import io.getstream.chat.android.models.Reaction
+import io.getstream.chat.android.ui.common.state.messages.React
+import io.getstream.chat.android.ui.common.state.messages.list.SelectedMessageOptionsState
+import io.getstream.chat.android.ui.common.state.messages.list.SelectedMessageReactionsState
+import io.getstream.chat.android.ui.common.state.messages.list.SelectedMessageState
 import io.getstream.slackclone.uichat.chatthread.composables.reactions.SlackCloneReactions
 
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun BoxScope.ChatMessageReactionSelectMenu(
   listViewModel: MessageListViewModel,
-  currentState: MessagesState
+  selectedMessageState: SelectedMessageState?
 ) {
-  val selectedMessageState = currentState.selectedMessageState
   val selectedMessage = selectedMessageState?.message ?: Message()
   val user by listViewModel.user.collectAsState()
 
@@ -65,17 +62,17 @@ fun BoxScope.ChatMessageReactionSelectMenu(
   ) {
     SelectedMessageMenu(
       modifier = Modifier
-        .align(Alignment.BottomCenter)
-        .animateEnterExit(
-          enter = slideInVertically(
-            initialOffsetY = { height -> height },
-            animationSpec = tween()
+          .align(Alignment.BottomCenter)
+          .animateEnterExit(
+              enter = slideInVertically(
+                  initialOffsetY = { height -> height },
+                  animationSpec = tween()
+              ),
+              exit = slideOutVertically(
+                  targetOffsetY = { height -> height },
+                  animationSpec = tween(durationMillis = AnimationConstants.DefaultDurationMillis / 2)
+              )
           ),
-          exit = slideOutVertically(
-            targetOffsetY = { height -> height },
-            animationSpec = tween(durationMillis = AnimationConstants.DefaultDurationMillis / 2)
-          )
-        ),
       messageOptions = messageOptions,
       message = selectedMessage,
       ownCapabilities = ownCapabilities,
@@ -96,13 +93,13 @@ fun BoxScope.ChatMessageReactionSelectMenu(
   ) {
     SelectedReactionsMenu(
       modifier = Modifier
-        .align(Alignment.Center)
-        .padding(start = 20.dp, end = 20.dp, bottom = 20.dp)
-        .wrapContentSize()
-        .animateEnterExit(
-          enter = fadeIn(),
-          exit = fadeOut(animationSpec = tween(durationMillis = AnimationConstants.DefaultDurationMillis / 2))
-        ),
+          .align(Alignment.Center)
+          .padding(start = 20.dp, end = 20.dp, bottom = 20.dp)
+          .wrapContentSize()
+          .animateEnterExit(
+              enter = fadeIn(),
+              exit = fadeOut(animationSpec = tween(durationMillis = AnimationConstants.DefaultDurationMillis / 2))
+          ),
       currentUser = user,
       message = selectedMessage,
       onMessageAction = { action ->
@@ -127,6 +124,7 @@ fun BoxScope.ChatMessageReactionSelectMenu(
                 listViewModel
               )
             }
+
             else -> {
               listViewModel.performMessageAction(action)
             }

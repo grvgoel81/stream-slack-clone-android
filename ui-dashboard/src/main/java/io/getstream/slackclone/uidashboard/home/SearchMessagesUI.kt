@@ -54,12 +54,15 @@ private fun Content() {
   Column(Modifier.verticalScroll(rememberScrollState())) {
     SlackListItem(
       icon = Icons.Default.ShoppingCart,
-      title = stringResource(R.string.browse_people)
+      title = stringResource(io.getstream.slackclone.common.R.string.browse_people)
     )
-    SlackListItem(icon = Icons.Default.Search, title = stringResource(R.string.browse_channels))
+    SlackListItem(
+      icon = Icons.Default.Search,
+      title = stringResource(io.getstream.slackclone.common.R.string.browse_channels)
+    )
     SlackListDivider()
     // Recent Searches
-    SearchText(stringResource(R.string.recent_searches))
+    SearchText(stringResource(io.getstream.slackclone.common.R.string.recent_searches))
     repeat(5) {
       SlackListItem(
         icon = Icons.Default.Favorite,
@@ -69,7 +72,7 @@ private fun Content() {
     }
     SlackListDivider()
     // Narrow Your Search
-    SearchText(stringResource(R.string.narrow_your_search))
+    SearchText(stringResource(io.getstream.slackclone.common.R.string.narrow_your_search))
     repeat(5) {
       SlackListItemTrailingView(
         icon = Icons.Default.Favorite,

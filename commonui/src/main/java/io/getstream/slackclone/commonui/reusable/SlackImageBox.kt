@@ -10,11 +10,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
-import com.skydoves.landscapist.ShimmerParams
+import com.skydoves.landscapist.components.rememberImageComponent
 import com.skydoves.landscapist.glide.GlideImage
+import com.skydoves.landscapist.placeholder.shimmer.Shimmer
+import com.skydoves.landscapist.placeholder.shimmer.ShimmerPlugin
 import io.getstream.slackclone.commonui.R
 import io.getstream.slackclone.commonui.theme.ShimmerBackground
 import io.getstream.slackclone.commonui.theme.ShimmerHighLight
@@ -24,12 +27,17 @@ import io.getstream.slackclone.commonui.theme.SlackCloneSurface
 @Composable
 fun SlackImageBox(modifier: Modifier, imageModel: Any) {
   GlideImage(
-    imageModel = imageModel,
-    previewPlaceholder = R.drawable.logo_stream,
-    shimmerParams = ShimmerParams(
-      highlightColor = ShimmerHighLight,
-      baseColor = ShimmerBackground
-    ),
+    imageModel = { imageModel },
+    previewPlaceholder = painterResource(R.drawable.logo_stream),
+    component = rememberImageComponent {
+      // shows a shimmering effect when loading an image.
+      +ShimmerPlugin(
+        Shimmer.Flash(
+          baseColor = ShimmerBackground,
+          highlightColor = ShimmerHighLight,
+        ),
+      )
+    },
     modifier = modifier.clip(RoundedCornerShape(8.dp))
   )
 }

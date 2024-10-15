@@ -1,9 +1,9 @@
 package io.getstream.slackclone.chatcore.extensions
 
 import io.getstream.chat.android.client.ChatClient
-import io.getstream.chat.android.client.models.Channel
-import io.getstream.chat.android.client.models.Member
-import io.getstream.chat.android.client.models.User
+import io.getstream.chat.android.models.Channel
+import io.getstream.chat.android.models.Member
+import io.getstream.chat.android.models.User
 import io.getstream.slackclone.chatcore.data.UiLayerChannels
 import io.getstream.slackclone.domain.model.message.DomainLayerMessages
 import java.util.Date
@@ -12,7 +12,6 @@ import kotlin.random.Random
 fun UiLayerChannels.SlackChannel.toStreamChannel(): Channel {
   return Channel(
     id = uuid ?: "",
-    cid = "messaging:$uuid",
     type = "messaging",
     name = name ?: "",
     image = pictureUrl ?: "",

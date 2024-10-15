@@ -1,16 +1,16 @@
 plugins {
   id(BuildPlugins.ANDROID_LIBRARY_PLUGIN)
   id(BuildPlugins.KOTLIN_ANDROID_PLUGIN)
-  id(BuildPlugins.KOTLIN_KAPT)
+  id(BuildPlugins.KOTLIN_KSP)
   id(BuildPlugins.DAGGER_HILT)
 }
 
 android {
   compileSdk = ProjectProperties.COMPILE_SDK
+  namespace = "io.getstream.slackclone.data"
 
   defaultConfig {
     minSdk = (ProjectProperties.MIN_SDK)
-    targetSdk = (ProjectProperties.TARGET_SDK)
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
 
@@ -22,12 +22,6 @@ android {
   }
 }
 
-// Required for annotation processing plugins like Dagger
-kapt {
-  generateStubs = true
-  correctErrorTypes = true
-}
-
 dependencies {
 
   implementation("com.github.vatbub:randomusers:1.3"){
@@ -37,7 +31,7 @@ dependencies {
   implementation(project(":domain"))
 
   /*Stream Chat SDK*/
-  implementation(Lib.STREAM.STREAM_CHAT_CLIENT)
+  api(Lib.STREAM.STREAM_CHAT_CLIENT)
 
   /*Kotlin*/
   api(Lib.Kotlin.KT_STD)
@@ -47,7 +41,7 @@ dependencies {
   implementation(Lib.Paging.PAGING_3)
   /* Room */
   api(Lib.Room.roomRuntime)
-  kapt(Lib.Room.roomCompiler)
+  ksp(Lib.Room.roomCompiler)
   api(Lib.Room.roomKtx)
   api(Lib.Room.roomPaging)
 
@@ -60,5 +54,5 @@ dependencies {
 
   /* Dependency Injection */
   api(Lib.Di.hiltAndroid)
-  kapt(Lib.Di.hiltAndroidCompiler)
+  ksp(Lib.Di.hiltAndroidCompiler)
 }

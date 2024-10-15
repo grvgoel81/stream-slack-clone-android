@@ -6,7 +6,9 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Checkbox
@@ -39,15 +41,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.google.accompanist.insets.navigationBarsPadding
-import com.google.accompanist.insets.statusBarsPadding
 import io.getstream.slackclone.commonui.material.SlackSurfaceAppBar
 import io.getstream.slackclone.commonui.theme.SlackCloneColorProvider
 import io.getstream.slackclone.commonui.theme.SlackCloneSurface
 import io.getstream.slackclone.commonui.theme.SlackCloneTheme
 import io.getstream.slackclone.commonui.theme.SlackCloneTypography
+import io.getstream.slackclone.iochannels.R
 import io.getstream.slackclone.navigator.ComposeNavigator
-import io.getstream.slackclone.uichannels.R
 
 @Composable
 fun CreateNewChannelUI(
@@ -74,8 +74,8 @@ private fun CreateChannel(
       backgroundColor = SlackCloneColorProvider.colors.uiBackground,
       contentColor = SlackCloneColorProvider.colors.textSecondary,
       modifier = Modifier
-        .statusBarsPadding()
-        .navigationBarsPadding(),
+          .statusBarsPadding()
+          .navigationBarsPadding(),
       scaffoldState = scaffoldState,
       topBar = {
         NewChannelAppBar(composeNavigator, createChannelVM)
@@ -89,7 +89,6 @@ private fun CreateChannel(
   }
 }
 
-@OptIn(ExperimentalMaterialApi::class)
 @Composable
 private fun NewChannelContent(innerPadding: PaddingValues, createChannelVM: CreateChannelVM) {
   val searchChannel by createChannelVM.channel.collectAsState()

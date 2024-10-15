@@ -60,7 +60,7 @@ class SlackCloneComposeNavigator @Inject constructor() : ComposeNavigator() {
             .onEach {
               // Nullify the result to avoid resubmitting it
               savedStateHandle.set(key, null)
-            }
+            } as Flow<T>
         } ?: emptyFlow()
       }
   }

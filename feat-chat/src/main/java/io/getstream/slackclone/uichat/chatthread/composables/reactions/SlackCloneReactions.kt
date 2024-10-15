@@ -17,13 +17,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import io.getstream.chat.android.client.models.Message
-import io.getstream.chat.android.client.models.Reaction
-import io.getstream.chat.android.common.state.MessageAction
-import io.getstream.chat.android.common.state.React
 import io.getstream.chat.android.compose.state.reactionoptions.ReactionOptionItemState
 import io.getstream.chat.android.compose.ui.theme.ChatTheme
 import io.getstream.chat.android.compose.ui.util.ReactionIcon
+import io.getstream.chat.android.models.Message
+import io.getstream.chat.android.models.Reaction
+import io.getstream.chat.android.ui.common.state.messages.MessageAction
+import io.getstream.chat.android.ui.common.state.messages.React
 
 @Composable
 fun SlackCloneReactions(
@@ -33,8 +33,8 @@ fun SlackCloneReactions(
 ) {
   ReactionOptions(
     modifier = Modifier
-      .fillMaxWidth()
-      .padding(start = 16.dp, end = 16.dp, bottom = 8.dp, top = 20.dp),
+        .fillMaxWidth()
+        .padding(start = 16.dp, end = 16.dp, bottom = 8.dp, top = 20.dp),
     reactionTypes = reactionTypes,
     onReactionOptionSelected = {
       onMessageAction(

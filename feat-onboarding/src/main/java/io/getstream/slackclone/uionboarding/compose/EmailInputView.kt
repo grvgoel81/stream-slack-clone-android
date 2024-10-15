@@ -87,7 +87,7 @@ private fun EmailTF(onBoardingVM: OnBoardingVM) {
       )
     },
     keyboardOptions = KeyboardOptions.Default.copy(
-      autoCorrect = false,
+      autoCorrectEnabled = false,
       keyboardType = KeyboardType.Email,
       imeAction = ImeAction.Done,
     ),

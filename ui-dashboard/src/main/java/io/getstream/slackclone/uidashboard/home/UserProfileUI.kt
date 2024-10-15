@@ -32,7 +32,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import io.getstream.chat.android.client.ChatClient
-import io.getstream.chat.android.client.models.User
+import io.getstream.chat.android.models.User
 import io.getstream.slackclone.commonui.material.SlackSurfaceAppBar
 import io.getstream.slackclone.commonui.reusable.SlackImageBox
 import io.getstream.slackclone.commonui.reusable.SlackListItem
@@ -53,13 +53,13 @@ fun UserProfileUI() {
       Box(Modifier.padding(horizontal = 8.dp, vertical = 4.dp)) {
         StatusBox()
       }
-      SlackListItem(Icons.Default.Notifications, stringResource(R.string.pause_notifications))
-      SlackListItem(Icons.Default.Person, stringResource(R.string.set_away))
+      SlackListItem(Icons.Default.Notifications, stringResource(io.getstream.slackclone.common.R.string.pause_notifications))
+      SlackListItem(Icons.Default.Person, stringResource(io.getstream.slackclone.common.R.string.set_away))
       Divider(color = SlackCloneColorProvider.colors.lineColor, thickness = 0.5.dp)
-      SlackListItem(Icons.Default.FavoriteBorder, stringResource(R.string.saved_items))
-      SlackListItem(Icons.Default.Person, stringResource(R.string.view_profile))
-      SlackListItem(Icons.Default.Notifications, stringResource(R.string.notifications))
-      SlackListItem(Icons.Default.Settings, stringResource(R.string.preferences))
+      SlackListItem(Icons.Default.FavoriteBorder, stringResource(io.getstream.slackclone.common.R.string.saved_items))
+      SlackListItem(Icons.Default.Person, stringResource(io.getstream.slackclone.common.R.string.view_profile))
+      SlackListItem(Icons.Default.Notifications, stringResource(io.getstream.slackclone.common.R.string.notifications))
+      SlackListItem(Icons.Default.Settings, stringResource(io.getstream.slackclone.common.R.string.preferences))
     }
   }
 }

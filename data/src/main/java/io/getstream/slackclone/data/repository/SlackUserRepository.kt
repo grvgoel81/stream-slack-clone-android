@@ -3,8 +3,7 @@ package io.getstream.slackclone.data.repository
 import com.github.vatbub.randomusers.Generator
 import com.github.vatbub.randomusers.result.RandomUser
 import io.getstream.chat.android.client.ChatClient
-import io.getstream.chat.android.client.call.await
-import io.getstream.chat.android.client.models.User
+import io.getstream.chat.android.models.User
 import io.getstream.slackclone.common.injection.dispatcher.CoroutineDispatcherProvider
 import io.getstream.slackclone.data.mapper.EntityMapper
 import io.getstream.slackclone.domain.model.login.LoginState
@@ -46,11 +45,11 @@ class SlackUserRepository @Inject constructor(
     return if (result.isSuccess) {
       LoginState.Success
     } else {
-      LoginState.Failure(result.error().message ?: "")
+      LoginState.Failure(result.errorOrNull()?.message.orEmpty())
     }
   }
 
   override suspend fun logout() {
-    chatClient.disconnect()
+    chatClient.disconnect(flushPersistence = true)
   }
 }

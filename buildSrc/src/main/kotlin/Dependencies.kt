@@ -3,39 +3,41 @@ import Lib.Networking
 /** This file contains versions of all the dependencies used in the module  */
 
 object BuildPlugins {
-  const val TOOLS_BUILD_GRADLE = "com.android.tools.build:gradle:7.2.0"
-  const val DAGGER_HILT_PLUGIN = "com.google.dagger:hilt-android-gradle-plugin:2.40.5"
-  const val KOTLIN_GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21"
+  const val TOOLS_BUILD_GRADLE = "com.android.tools.build:gradle:8.6.1"
+  const val DAGGER_HILT_PLUGIN = "com.google.dagger:hilt-android-gradle-plugin:2.52"
+  const val KOTLIN_GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:2.0.21"
+  const val COMPOSE_GRADLE_PLUGIN = "org.jetbrains.kotlin:compose-compiler-gradle-plugin:2.0.21"
+  const val KOTLIN_KSP_GRADLE_PLUGIN = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:2.0.21-1.0.25"
   const val ANDROID_APPLICATION_PLUGIN = "com.android.application"
   const val ANDROID_LIBRARY_PLUGIN = "com.android.library"
   const val ANDROID_TEST_PLUGIN = "com.android.test"
   const val KOTLIN_ANDROID_PLUGIN = "kotlin-android"
   const val KOTLIN_PARCELABLE_PLUGIN = "kotlin-parcelize"
-  const val KOTLIN_KAPT = "kotlin-kapt"
+  const val KOTLIN_KSP = "com.google.devtools.ksp"
   const val DAGGER_HILT = "dagger.hilt.android.plugin"
+  const val COMPOSE_COMPILER = "org.jetbrains.kotlin.plugin.compose"
   const val SPOTLESS = "com.diffplug.spotless:spotless-plugin-gradle:6.3.0"
 }
 
 object Lib {
   object Kotlin {
-    const val KOTLIN_VERSION = "1.6.21"
+    const val KOTLIN_VERSION = "2.0.21"
     private const val KTX_CORE_VERSION = "1.2.0"
     const val KT_STD = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$KOTLIN_VERSION"
     const val KTX_CORE = "androidx.core:core-ktx:$KTX_CORE_VERSION"
   }
 
   object Android {
-    const val COMPOSE_VERSION = "1.2.0-rc01"
-    const val COMPOSE_COMPILER_VERSION = "1.2.0-rc01"
+    const val COMPOSE_VERSION = "1.7.1"
     private const val MATERIAL_DESIGN_VERSION = "1.4.0"
     private const val COMPOSE_ACTIVITY_VERSION = "1.4.0"
     private const val COMPOSE_CONSTRAINT_LAYOUT_VERSION = "1.0.0"
-    private const val COMPOSE_NAVIGATION_VERSION = "2.5.0-alpha01"
-    private const val LANDSCAPIST_GLIDE_VERSION = "1.5.3"
-    private const val ACCOMPANIST_VERSION = "0.24.1-alpha"
+    private const val COMPOSE_NAVIGATION_VERSION = "2.8.2"
+    private const val LANDSCAPIST_GLIDE_VERSION = "2.4.1"
+    private const val ACCOMPANIST_VERSION = "0.36.0"
     private const val SPLASH_SCREEN_VERSION = "1.0.0-beta01"
 
-    const val APP_COMPAT = "androidx.appcompat:appcompat:1.3.0-beta01"
+    const val APP_COMPAT = "androidx.appcompat:appcompat:1.6.1"
 
     // Compose
     const val ACTIVITY_COMPOSE = "androidx.activity:activity-compose:$COMPOSE_ACTIVITY_VERSION"
@@ -45,6 +47,7 @@ object Lib {
     const val ACCOMPANIST_SYSTEM_UI_CONTROLLER =
       "com.google.accompanist:accompanist-systemuicontroller:$ACCOMPANIST_VERSION"
     const val LANDSCAPIST_GLIDE = "com.github.skydoves:landscapist-glide:$LANDSCAPIST_GLIDE_VERSION"
+    const val LANDSCAPIST_PLACEHOLDER = "com.github.skydoves:landscapist-placeholder:$LANDSCAPIST_GLIDE_VERSION"
     const val COMPOSE_LIVEDATA = "androidx.compose.runtime:runtime-livedata:$COMPOSE_VERSION"
     const val COMPOSE_MATERIAL = "androidx.compose.material:material:$COMPOSE_VERSION"
     const val COMPOSE_FOUNDATION = "androidx.compose.foundation:foundation:$COMPOSE_VERSION"
@@ -52,9 +55,9 @@ object Lib {
     const val COMPOSE_DEBUG_TOOLING = "androidx.compose.ui:ui-tooling:$COMPOSE_VERSION"
     const val COMPOSE_NAVIGATION =
       "androidx.navigation:navigation-compose:$COMPOSE_NAVIGATION_VERSION"
+    const val COMPOSE_ICON =
+      "androidx.compose.material:material-icons-extended:$COMPOSE_VERSION"
     const val MATERIAL_DESIGN = "com.google.android.material:material:$MATERIAL_DESIGN_VERSION"
-    const val ACCOMPANIST_INSETS =
-      "com.google.accompanist:accompanist-insets:$ACCOMPANIST_VERSION"
     const val SPLASH_SCREEN_API = "androidx.core:core-splashscreen:$SPLASH_SCREEN_VERSION"
 
     // App startup
@@ -62,11 +65,10 @@ object Lib {
   }
 
   object Di {
-    private const val DAGGER_VERSION = "2.40.5"
+    private const val DAGGER_VERSION = "2.52"
     const val hiltAndroid = "com.google.dagger:hilt-android:$DAGGER_VERSION"
     const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:$DAGGER_VERSION"
 
-    const val hiltViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
     const val hiltCompiler = "androidx.hilt:hilt-compiler:1.0.0"
     const val hiltNavigationCompose = "androidx.hilt:hilt-navigation-compose:1.0.0"
   }
@@ -78,7 +80,7 @@ object Lib {
   }
 
   object Room {
-    private const val roomVersion = "2.4.2"
+    private const val roomVersion = "2.5.0"
     const val roomRuntime = "androidx.room:room-runtime:$roomVersion"
     const val roomCompiler = "androidx.room:room-compiler:$roomVersion"
 
@@ -106,8 +108,9 @@ object Lib {
   }
 
   object STREAM {
-    private const val STREAM_CHAT_VERSION = "5.5.0"
+    private const val STREAM_CHAT_VERSION = "6.5.1"
     const val STREAM_CHAT_CLIENT = "io.getstream:stream-chat-android-client:$STREAM_CHAT_VERSION"
+    const val STREAM_CHAT_OFFLINE = "io.getstream:stream-chat-android-offline:$STREAM_CHAT_VERSION"
     const val STREAM_CHAT_COMPOSE =
       "io.getstream:stream-chat-android-compose:$STREAM_CHAT_VERSION"
   }

@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.ListItem
 import androidx.compose.material.Text
+import androidx.compose.material.ripple
 import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -18,11 +19,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import io.getstream.chat.android.client.models.Message
-import io.getstream.chat.android.compose.state.messages.list.MessageItemState
 import io.getstream.chat.android.compose.state.reactionoptions.ReactionOptionItemState
 import io.getstream.chat.android.compose.ui.components.messages.MessageReactions
 import io.getstream.chat.android.compose.ui.theme.ChatTheme
+import io.getstream.chat.android.models.Message
+import io.getstream.chat.android.ui.common.state.messages.list.MessageItemState
 import io.getstream.slackclone.common.extensions.calendar
 import io.getstream.slackclone.common.extensions.formattedTime
 import io.getstream.slackclone.commonui.reusable.SlackImageBox
@@ -110,13 +111,13 @@ private fun ChatMessageReactions(
       ?.let { options ->
         MessageReactions(
           modifier = Modifier
-            .clickable(
-              interactionSource = remember { MutableInteractionSource() },
-              indication = rememberRipple(bounded = false)
-            ) {
-              onReactionsClick(message)
-            }
-            .padding(horizontal = 4.dp, vertical = 2.dp),
+              .clickable(
+                  interactionSource = remember { MutableInteractionSource() },
+                  indication = ripple(bounded = false)
+              ) {
+                  onReactionsClick(message)
+              }
+              .padding(horizontal = 4.dp, vertical = 2.dp),
           itemContent = { option ->
             SlackMessageReactionItem(
               option = option,

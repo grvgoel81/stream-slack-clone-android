@@ -14,8 +14,8 @@ import io.getstream.slackclone.commonui.material.SlackSurfaceAppBar
 import io.getstream.slackclone.commonui.theme.SlackCloneColorProvider
 import io.getstream.slackclone.commonui.theme.SlackCloneSurface
 import io.getstream.slackclone.commonui.theme.SlackCloneTypography
-import io.getstream.slackclone.uichannels.R
 import io.getstream.slackclone.uichannels.directmessages.EmptyContent
+import io.getstream.slackclone.uidashboard.R
 
 @Composable
 fun MentionsReactionsUI() {
@@ -28,8 +28,8 @@ fun MentionsReactionsUI() {
       ChatTheme {
         EmptyContent(
           modifier = Modifier.fillMaxSize(),
-          painter = painterResource(id = R.drawable.stream_compose_empty_channels),
-          text = stringResource(R.string.stream_compose_message_list_empty_messages),
+          painter = painterResource(id = io.getstream.chat.android.compose.R.drawable.stream_compose_empty_channels),
+          text = stringResource(io.getstream.chat.android.compose.R.string.stream_compose_channel_list_empty_channels),
         )
       }
     }

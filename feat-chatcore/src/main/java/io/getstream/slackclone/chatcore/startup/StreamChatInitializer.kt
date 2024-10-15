@@ -20,9 +20,9 @@ import android.content.Context
 import androidx.startup.Initializer
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.logger.ChatLogLevel
-import io.getstream.chat.android.offline.model.message.attachments.UploadAttachmentsNetworkType
-import io.getstream.chat.android.offline.plugin.configuration.Config
 import io.getstream.chat.android.offline.plugin.factory.StreamOfflinePluginFactory
+import io.getstream.chat.android.state.plugin.config.StatePluginConfig
+import io.getstream.chat.android.state.plugin.factory.StreamStatePluginFactory
 
 /**
  * StreamChatInitializer initializes all Stream Client components.
@@ -31,19 +31,13 @@ class StreamChatInitializer : Initializer<Unit> {
 
   override fun create(context: Context) {
     // Set up the OfflinePlugin for offline storage
-    val offlinePluginFactory = StreamOfflinePluginFactory(
-      config = Config(
-        backgroundSyncEnabled = true,
-        userPresence = true,
-        persistenceEnabled = true,
-        uploadAttachmentsNetworkType = UploadAttachmentsNetworkType.NOT_ROAMING,
-      ),
-      appContext = context,
-    )
+    val offlinePluginFactory = StreamOfflinePluginFactory(appContext = context)
+    val statePluginFactory =
+      StreamStatePluginFactory(config = StatePluginConfig(), appContext = context)
 
     // Set up the client for API calls with the plugin for offline storage
     ChatClient.Builder("6wj48bfwxg4h", context)
-      .withPlugin(offlinePluginFactory)
+      .withPlugins(offlinePluginFactory, statePluginFactory)
       .logLevel(ChatLogLevel.DEBUG)
       .build()
   }

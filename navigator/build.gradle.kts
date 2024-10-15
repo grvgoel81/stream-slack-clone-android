@@ -1,15 +1,16 @@
 plugins {
   id(BuildPlugins.ANDROID_LIBRARY_PLUGIN)
   id(BuildPlugins.KOTLIN_ANDROID_PLUGIN)
-  id(BuildPlugins.KOTLIN_KAPT)
+  id(BuildPlugins.KOTLIN_KSP)
+  id(BuildPlugins.COMPOSE_COMPILER)
 }
 
 android {
   compileSdk = ProjectProperties.COMPILE_SDK
+  namespace = "io.getstream.slackclone.navigator"
 
   defaultConfig {
     minSdk = (ProjectProperties.MIN_SDK)
-    targetSdk = (ProjectProperties.TARGET_SDK)
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
 
@@ -28,16 +29,6 @@ android {
   kotlinOptions {
     jvmTarget = "1.8"
   }
-
-  composeOptions {
-    kotlinCompilerExtensionVersion = Lib.Android.COMPOSE_COMPILER_VERSION
-  }
-}
-
-// Required for annotation processing plugins like Dagger
-kapt {
-  generateStubs = true
-  correctErrorTypes = true
 }
 
 dependencies {

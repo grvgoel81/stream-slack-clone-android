@@ -8,6 +8,7 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
+import androidx.compose.material.ripple
 import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -50,7 +51,7 @@ fun CustomReactionOptionItem(
         .rotate(-45f + (45 * springValue))
         .clickable(
           interactionSource = remember { MutableInteractionSource() },
-          indication = rememberRipple(bounded = false),
+          indication = ripple(bounded = false),
           onClick = {
             currentState = if (currentState == ReactionButtonState.IDLE)
               ReactionButtonState.ACTIVE else ReactionButtonState.IDLE

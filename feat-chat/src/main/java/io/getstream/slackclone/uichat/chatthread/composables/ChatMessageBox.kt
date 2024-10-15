@@ -31,7 +31,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.dp
-import io.getstream.chat.android.client.models.Channel
+import io.getstream.chat.android.models.Channel
 import io.getstream.slackclone.commonui.keyboard.Keyboard
 import io.getstream.slackclone.commonui.keyboard.keyboardAsState
 import io.getstream.slackclone.commonui.theme.SlackCloneColorProvider

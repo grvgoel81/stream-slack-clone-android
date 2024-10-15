@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Icon
@@ -32,7 +33,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
-import com.google.accompanist.insets.statusBarsPadding
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import io.getstream.slackclone.commonui.material.SlackSurfaceAppBar
 import io.getstream.slackclone.commonui.theme.SlackCloneColor
@@ -91,8 +91,8 @@ fun SkipTypingUI(composeNavigator: ComposeNavigator) {
             verticalArrangement = Arrangement.SpaceAround,
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
-              .fillMaxHeight()
-              .fillMaxWidth()
+                .fillMaxHeight()
+                .fillMaxWidth()
           ) {
             Image(
               painter = painterResource(id = R.drawable.gettingstarted),
@@ -122,8 +122,8 @@ fun EmailMeMagicLink(composeNavigator: ComposeNavigator) {
     border = BorderStroke(1.dp, color = Color.White),
     colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent),
     modifier = Modifier
-      .fillMaxWidth()
-      .height(40.dp),
+        .fillMaxWidth()
+        .height(40.dp),
   ) {
     Text(
       text = "Email me a magic link",
@@ -138,9 +138,9 @@ private fun IWillSignInManually(composeNavigator: ComposeNavigator) {
     onClick = {
       composeNavigator.navigate(SlackScreen.WorkspaceInputUI.name)
     },
-    Modifier
-      .fillMaxWidth()
-      .height(40.dp),
+      Modifier
+          .fillMaxWidth()
+          .height(40.dp),
     colors = ButtonDefaults.buttonColors(backgroundColor = Color.White)
   ) {
     Text(

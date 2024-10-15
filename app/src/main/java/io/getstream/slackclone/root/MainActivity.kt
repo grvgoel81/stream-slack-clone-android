@@ -8,7 +8,6 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import com.google.accompanist.insets.ProvideWindowInsets
 import dagger.hilt.android.AndroidEntryPoint
 import io.getstream.slackclone.navigator.ComposeNavigator
 import io.getstream.slackclone.navigator.SlackRoute
@@ -33,19 +32,16 @@ class MainActivity : ComponentActivity() {
       LaunchedEffect(Unit) {
         composeNavigator.handleNavigationCommands(navController)
       }
-
-      ProvideWindowInsets(windowInsetsAnimationsEnabled = true) {
-        NavHost(
-          navController = navController,
-          startDestination = SlackRoute.OnBoarding.name,
-        ) {
-          onboardingNavigation(
-            composeNavigator = composeNavigator,
-          )
-          dashboardNavigation(
-            composeNavigator = composeNavigator
-          )
-        }
+      NavHost(
+        navController = navController,
+        startDestination = SlackRoute.OnBoarding.name,
+      ) {
+        onboardingNavigation(
+          composeNavigator = composeNavigator,
+        )
+        dashboardNavigation(
+          composeNavigator = composeNavigator
+        )
       }
     }
   }

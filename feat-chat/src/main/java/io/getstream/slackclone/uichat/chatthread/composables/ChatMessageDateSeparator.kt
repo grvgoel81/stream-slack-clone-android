@@ -11,11 +11,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import io.getstream.chat.android.compose.state.messages.list.DateSeparatorState
 import io.getstream.chat.android.compose.ui.theme.ChatTheme
+import io.getstream.chat.android.ui.common.state.messages.list.DateSeparatorItemState
 
 @Composable
-fun ChatMessageDateSeparator(dateSeparator: DateSeparatorState) {
+fun ChatMessageDateSeparator(dateSeparator: DateSeparatorItemState) {
   Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
     Surface(
       modifier = Modifier

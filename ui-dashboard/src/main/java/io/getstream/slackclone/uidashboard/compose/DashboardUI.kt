@@ -8,7 +8,9 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
@@ -51,8 +53,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.google.accompanist.insets.navigationBarsPadding
-import com.google.accompanist.insets.statusBarsPadding
 import io.getstream.slackclone.chatcore.data.UiLayerChannels
 import io.getstream.slackclone.chatcore.extensions.toStreamChannel
 import io.getstream.slackclone.commonui.reusable.SlackDragComposableView
@@ -65,6 +65,7 @@ import io.getstream.slackclone.navigator.ComposeNavigator
 import io.getstream.slackclone.navigator.SlackScreen
 import io.getstream.slackclone.uichat.chatthread.ChatScreenUI
 import io.getstream.slackclone.uichat.chatthread.ChatScreenVM
+import io.getstream.slackclone.uidashboard.R
 import io.getstream.slackclone.uidashboard.home.DirectMessagesUI
 import io.getstream.slackclone.uidashboard.home.HomeScreenUI
 import io.getstream.slackclone.uidashboard.home.MentionsReactionsUI
@@ -263,15 +264,15 @@ private fun OverlayDark(appBarIconClick: () -> Unit) {
 }
 
 sealed class Screen(val route: String, val image: ImageVector, @StringRes val resourceId: Int) {
-  object Home : Screen("Home", Icons.Filled.Home, io.getstream.slackclone.uidashboard.R.string.home)
-  object DMs : Screen("DMs", Icons.Filled.Menu, io.getstream.slackclone.uidashboard.R.string.dms)
-  object Mentions :
-    Screen("Mentions", Icons.Filled.Email, io.getstream.slackclone.uidashboard.R.string.mentions)
+  data object Home : Screen("Home", Icons.Filled.Home, io.getstream.slackclone.common.R.string.home)
+  data object DMs : Screen("DMs", Icons.Filled.Menu, io.getstream.slackclone.common.R.string.dms)
+  data object Mentions :
+    Screen("Mentions", Icons.Filled.Email, io.getstream.slackclone.common.R.string.mentions)
 
-  object Search :
-    Screen("Search", Icons.Filled.Search, io.getstream.slackclone.uidashboard.R.string.search)
+  data object Search :
+    Screen("Search", Icons.Filled.Search, io.getstream.slackclone.common.R.string.search)
 
-  object You : Screen("You", Icons.Default.Face, io.getstream.slackclone.uidashboard.R.string.you)
+  data object You : Screen("You", Icons.Default.Face, io.getstream.slackclone.common.R.string.you)
 }
 
 @Composable

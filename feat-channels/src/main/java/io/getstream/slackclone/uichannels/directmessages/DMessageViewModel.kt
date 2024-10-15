@@ -5,9 +5,8 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.api.models.QueryChannelsRequest
-import io.getstream.chat.android.client.call.await
-import io.getstream.chat.android.client.models.Channel
-import io.getstream.chat.android.client.models.Filters
+import io.getstream.chat.android.models.Channel
+import io.getstream.chat.android.models.Filters
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -32,7 +31,7 @@ class DMessageViewModel @Inject constructor(
       )
       val result = chatClient.queryChannels(channelsRequest).await()
       if (result.isSuccess) {
-        channels.value = result.data()
+        channels.value = result.getOrThrow()
       }
     }
   }

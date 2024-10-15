@@ -5,7 +5,10 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.imePadding
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
@@ -25,9 +28,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
-import com.google.accompanist.insets.navigationBarsPadding
-import com.google.accompanist.insets.navigationBarsWithImePadding
-import com.google.accompanist.insets.statusBarsPadding
 import io.getstream.slackclone.commonui.theme.SlackCloneColorProvider
 import io.getstream.slackclone.commonui.theme.SlackCloneSurface
 import io.getstream.slackclone.commonui.theme.SlackCloneTheme
@@ -40,7 +40,7 @@ import io.getstream.slackclone.navigator.SlackScreen
 @Composable
 fun CommonInputUI(
   composeNavigator: ComposeNavigator,
-  TopView: @Composable (modifier: Modifier) -> Unit,
+  topView: @Composable (Modifier) -> Unit,
   subtitleText: String,
   onBoardingVM: OnBoardingVM
 ) {
@@ -52,8 +52,8 @@ fun CommonInputUI(
       backgroundColor = SlackCloneColorProvider.colors.uiBackground,
       contentColor = SlackCloneColorProvider.colors.textSecondary,
       modifier = Modifier
-        .statusBarsPadding()
-        .navigationBarsPadding(),
+          .statusBarsPadding()
+          .navigationBarsPadding(),
       scaffoldState = scaffoldState,
       snackbarHost = {
         scaffoldState.snackbarHostState
@@ -66,15 +66,15 @@ fun CommonInputUI(
         ) {
           ConstraintLayout(
             modifier = Modifier
-              .padding(12.dp)
-              .navigationBarsWithImePadding()
-              .fillMaxHeight()
-              .fillMaxWidth()
+                .padding(12.dp)
+                .imePadding()
+                .fillMaxHeight()
+                .fillMaxWidth()
           ) {
             val (inputView, subtitle, button, loading) = createRefs()
 
-            TopView(
-              modifier = Modifier.constrainAs(inputView) {
+            topView(
+              Modifier.constrainAs(inputView) {
                 top.linkTo(parent.top)
                 bottom.linkTo(button.top)
                 start.linkTo(parent.start)
@@ -140,10 +140,10 @@ fun NextButton(
 
   Button(
     onClick = { onBoardingVM.connectUser() },
-    modifier
-      .fillMaxWidth()
-      .height(50.dp)
-      .padding(top = 8.dp),
+      modifier
+          .fillMaxWidth()
+          .height(50.dp)
+          .padding(top = 8.dp),
     enabled = input.isNotEmpty(),
     colors = ButtonDefaults.buttonColors(
       backgroundColor = SlackCloneColorProvider.colors.buttonColor,
@@ -163,8 +163,8 @@ private fun SubTitle(modifier: Modifier = Modifier, subtitleText: String) {
   Text(
     subtitleText,
     modifier = modifier
-      .fillMaxWidth()
-      .wrapContentWidth(align = Alignment.Start),
+        .fillMaxWidth()
+        .wrapContentWidth(align = Alignment.Start),
     style = SlackCloneTypography.subtitle2.copy(
       color = SlackCloneColorProvider.colors.textPrimary.copy(alpha = 0.8f),
       fontWeight = FontWeight.Normal,

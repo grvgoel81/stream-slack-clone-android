@@ -22,14 +22,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import io.getstream.chat.android.client.models.Channel
 import io.getstream.chat.android.compose.ui.theme.ChatTheme
+import io.getstream.chat.android.models.Channel
 import io.getstream.slackclone.chatcore.data.UiLayerChannels
 import io.getstream.slackclone.chatcore.extensions.toSlackDomainChannelMessage
 import io.getstream.slackclone.chatcore.extensions.toSlackUIChannel
 import io.getstream.slackclone.chatcore.views.DMLastMessageItem
 import io.getstream.slackclone.commonui.theme.SlackCloneColorProvider
-import io.getstream.slackclone.uichannels.R
 
 @Composable
 fun DMChannelsList(
@@ -60,8 +59,8 @@ fun DMChannelsList(
     ChatTheme {
       EmptyContent(
         modifier = Modifier.fillMaxSize(),
-        painter = painterResource(id = R.drawable.stream_compose_empty_channels),
-        text = stringResource(R.string.stream_compose_message_list_empty_messages),
+        painter = painterResource(id = io.getstream.chat.android.compose.R.drawable.stream_compose_empty_channels),
+        text = stringResource(io.getstream.chat.android.compose.R.string.stream_compose_channel_list_empty_channels),
       )
     }
   }

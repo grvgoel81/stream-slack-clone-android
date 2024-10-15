@@ -17,7 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import io.getstream.chat.android.client.models.Channel
+import io.getstream.chat.android.models.Channel
 import io.getstream.slackclone.commonui.reusable.SlackListItem
 import io.getstream.slackclone.commonui.reusable.SlackOnlineBox
 import io.getstream.slackclone.commonui.theme.SlackCloneColorProvider
@@ -34,6 +34,7 @@ fun SlackChannelItem(
     true -> {
       DirectMessageChannel(onItemClick, slackChannel, textColor)
     }
+
     else -> {
       GroupChannelItem(slackChannel, onItemClick)
     }
@@ -62,11 +63,11 @@ private fun DirectMessageChannel(
 ) {
   Row(
     modifier = Modifier
-      .padding(8.dp)
-      .fillMaxWidth()
-      .clickable {
-        onItemClick(slackChannel)
-      },
+        .padding(8.dp)
+        .fillMaxWidth()
+        .clickable {
+            onItemClick(slackChannel)
+        },
     verticalAlignment = Alignment.CenterVertically
   ) {
     SlackOnlineBox(imageModel = slackChannel.image)
@@ -82,11 +83,11 @@ fun DMLastMessageItem(
 ) {
   Row(
     modifier = Modifier
-      .padding(start = 8.dp, bottom = 4.dp)
-      .fillMaxWidth()
-      .clickable {
-        onItemClick(slackChannel)
-      },
+        .padding(start = 8.dp, bottom = 4.dp)
+        .fillMaxWidth()
+        .clickable {
+            onItemClick(slackChannel)
+        },
     verticalAlignment = Alignment.CenterVertically
   ) {
 

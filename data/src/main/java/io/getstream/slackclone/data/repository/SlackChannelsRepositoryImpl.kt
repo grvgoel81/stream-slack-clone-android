@@ -1,3 +1,5 @@
+@file:Suppress("OPT_IN_USAGE_FUTURE_ERROR")
+
 package io.getstream.slackclone.data.repository
 
 import androidx.paging.Pager
@@ -5,9 +7,8 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.map
 import io.getstream.chat.android.client.ChatClient
-import io.getstream.chat.android.client.call.await
-import io.getstream.chat.android.client.models.Message
-import io.getstream.chat.android.client.models.User
+import io.getstream.chat.android.models.Message
+import io.getstream.chat.android.models.User
 import io.getstream.slackclone.common.injection.dispatcher.CoroutineDispatcherProvider
 import io.getstream.slackclone.data.local.dao.SlackChannelDao
 import io.getstream.slackclone.data.local.model.DBSlackChannel

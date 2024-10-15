@@ -11,7 +11,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import io.getstream.slackclone.chatcore.data.ExpandCollapseModel
 import io.getstream.slackclone.chatcore.data.UiLayerChannels
-import io.getstream.slackclone.uichannels.R
 import io.getstream.slackclone.uichannels.SlackChannelVM
 
 @Composable
@@ -21,7 +20,7 @@ fun SlackAllChannels(
   onClickAdd: () -> Unit
 ) {
 
-  val recent = stringResource(R.string.channels)
+  val recent = stringResource(io.getstream.slackclone.common.R.string.channels)
   val channelsFlow = channelVM.channels.collectAsState()
   val channels by channelsFlow.value.collectAsState(initial = listOf())
 

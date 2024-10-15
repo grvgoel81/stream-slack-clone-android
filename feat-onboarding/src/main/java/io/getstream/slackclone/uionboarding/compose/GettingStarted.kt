@@ -22,6 +22,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Scaffold
@@ -46,7 +47,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.dp
-import com.google.accompanist.insets.statusBarsPadding
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import io.getstream.slackclone.commonui.theme.SlackCloneColor
 import io.getstream.slackclone.commonui.theme.SlackCloneColorProvider
@@ -88,8 +88,8 @@ fun GettingStartedUI(composeNavigator: ComposeNavigator) {
             verticalArrangement = Arrangement.SpaceAround,
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
-              .fillMaxHeight()
-              .fillMaxWidth()
+                .fillMaxHeight()
+                .fillMaxWidth()
           ) {
             IntroText(modifier = Modifier.padding(top = 12.dp))
             CenterImage()
@@ -150,9 +150,9 @@ private fun GetStartedButton(composeNavigator: ComposeNavigator) {
       onClick = {
         composeNavigator.navigate(SlackScreen.SkipTypingScreen.name)
       },
-      Modifier
-        .fillMaxWidth()
-        .height(40.dp),
+        Modifier
+            .fillMaxWidth()
+            .height(40.dp),
       colors = ButtonDefaults.buttonColors(backgroundColor = Color.White)
     ) {
       Text(
