@@ -20,7 +20,7 @@ This repository serves as a demonstration for the following:
 If you're interested in additional repositories that were built with Jetpack Compose and Stream SDK, check out the repositories below:
 
 - [Chat GPT Android](https://github.com/skydoves/chatgpt-android): 📲 ChatGPT Android demonstrates a Chatbot application using OpenAI's chat API on Android with Stream Chat SDK for Compose.
-- [Genimi Android](https://github.com/skydoves/gemini-android): ✨ Gemini Android demonstrates Google's Generative AI on Android with Stream Chat SDK for Compose.
+- [Gemini Android](https://github.com/skydoves/gemini-android): ✨ Gemini Android demonstrates Google's Generative AI on Android with Stream Chat SDK for Compose.
 - [WhatsApp Clone Compose](https://github.com/getStream/whatsApp-clone-compose): 📱 WhatsApp clone project demonstrates modern Android development built with Jetpack Compose and Stream Chat SDK for Compose.
 - [Stream Draw Android](https://github.com/getStream/stream-draw-android): 🛥 Stream Draw is a real-time multiplayer drawing & chat game app built entirely with Jetpack Compose.
 - [Facebook Messenger Clone](https://github.com/MathRoda/Messenger-clone): Facebook Messenger clone using Stream SDK & Jetpack Compose.
